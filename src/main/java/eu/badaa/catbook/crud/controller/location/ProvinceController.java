@@ -4,9 +4,11 @@ import eu.badaa.catbook.crud.model.location.Province;
 import eu.badaa.catbook.crud.service.location.ProvinceService;
 import eu.badaa.generic.crud.controller.GenericCrudController;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
+@RequestMapping("/province")
 public class ProvinceController extends GenericCrudController<Province, String> {
 
     @Autowired

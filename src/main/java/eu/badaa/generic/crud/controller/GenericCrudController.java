@@ -13,21 +13,25 @@ public abstract class GenericCrudController<V extends GenericModel, K> {
 
     public abstract GenericCrudService<V, K> getService();
 
+    @CrossOrigin
     @GetMapping
     public List<V> getAllValues() {
         return Lists.newArrayList(getService().getAllValues());
     }
 
+    @CrossOrigin
     @PostMapping
     public V createOrSaveValue(@RequestBody V value) {
         return getService().createOrSaveValue(value);
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public V getValueById(@PathVariable K id) {
         return getService().getValueById(id);
     }
 
+    @CrossOrigin
     @DeleteMapping("/{id}")
     public void deleteValue(@PathVariable K id) {
         getService().deleteValue(id);
